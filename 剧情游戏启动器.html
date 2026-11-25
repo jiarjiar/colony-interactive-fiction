@@ -6074,7 +6074,7 @@
         const now = context.currentTime;
         cyberBgm.master.gain.cancelScheduledValues(now);
         cyberBgm.master.gain.setValueAtTime(Math.max(cyberBgm.master.gain.value, 0.0001), now);
-        cyberBgm.master.gain.exponentialRampToValueAtTime(0.16, now + 0.24);
+        cyberBgm.master.gain.exponentialRampToValueAtTime(0.5, now + 0.24);
         if (!cyberBgm.timer) scheduleCyberBgm();
       }).catch(() => {});
     }
