@@ -519,6 +519,7 @@ story = {
         "description": "蓝星被判定绝对安全之后，基地里的无机物开始复制、移动并捕食。你是霍尔少校，必须在每一件完美物品中寻找一毫米误差。",
         "theme": "void",
         "ambient": "none",
+        "soundtrack": "cyberpunk",
         "readingMode": "grouped",
         "cover": {"label": "COLONY", "tagline": "正常光线下，完美表面出现一毫米错误。"},
         "variableName": "误差",
