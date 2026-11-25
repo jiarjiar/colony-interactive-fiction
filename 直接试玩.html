@@ -4125,7 +4125,9 @@
       context: null,
       master: null,
       timer: null,
-      pauseTimer: null
+      pauseTimer: null,
+      noiseBuffer: null,
+      bar: 0
     };
 
     const el = {
@@ -6053,14 +6055,83 @@
       oscillator.stop(time + 0.33);
     }
 
+    function getCyberNoiseBuffer() {
+      if (cyberBgm.noiseBuffer) return cyberBgm.noiseBuffer;
+      const context = cyberBgm.context;
+      if (!context) return null;
+      const buffer = context.createBuffer(1, context.sampleRate, context.sampleRate);
+      const samples = buffer.getChannelData(0);
+      for (let index = 0; index < samples.length; index += 1) {
+        samples[index] = Math.random() * 2 - 1;
+      }
+      cyberBgm.noiseBuffer = buffer;
+      return buffer;
+    }
+
+    function playCyberKick(time, accent = 1) {
+      const context = cyberBgm.context;
+      if (!context) return;
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      oscillator.type = "sine";
+      oscillator.frequency.setValueAtTime(150, time);
+      oscillator.frequency.exponentialRampToValueAtTime(46, time + 0.16);
+      gain.gain.setValueAtTime(0.0001, time);
+      gain.gain.exponentialRampToValueAtTime(0.32 * accent, time + 0.008);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.22);
+      oscillator.connect(gain).connect(cyberBgm.master);
+      oscillator.start(time);
+      oscillator.stop(time + 0.24);
+    }
+
+    function playCyberNoise(time, cutoff, duration, volume) {
+      const context = cyberBgm.context;
+      const buffer = getCyberNoiseBuffer();
+      if (!context || !buffer) return;
+      const source = context.createBufferSource();
+      const filter = context.createBiquadFilter();
+      const gain = context.createGain();
+      source.buffer = buffer;
+      filter.type = "highpass";
+      filter.frequency.value = cutoff;
+      gain.gain.setValueAtTime(0.0001, time);
+      gain.gain.exponentialRampToValueAtTime(volume, time + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+      source.connect(filter).connect(gain).connect(cyberBgm.master);
+      source.start(time);
+      source.stop(time + duration + 0.02);
+    }
+
+    function playCyberSnare(time) {
+      playCyberNoise(time, 900, 0.16, 0.12);
+    }
+
+    function playCyberHat(time, accent = 1) {
+      playCyberNoise(time, 5600, 0.055, 0.042 * accent);
+    }
+
     function scheduleCyberBgm() {
       if (!cyberBgm.context || state.settings.bgmMuted || el.body.dataset.mode !== "play") return;
-      const pattern = [55, 0, 65.41, 0, 73.42, 0, 65.41, 82.41];
+      const patterns = [
+        [55, 0, 65.41, 0, 73.42, 0, 65.41, 0, 82.41, 0, 73.42, 0, 65.41, 0, 55, 0],
+        [55, 0, 73.42, 0, 82.41, 0, 73.42, 0, 65.41, 0, 73.42, 0, 87.31, 0, 82.41, 0],
+        [55, 0, 65.41, 73.42, 0, 65.41, 82.41, 0, 55, 0, 73.42, 65.41, 0, 55, 0, 0],
+        [55, 0, 82.41, 0, 73.42, 65.41, 0, 55, 82.41, 0, 73.42, 0, 65.41, 0, 55, 0]
+      ];
+      const bar = cyberBgm.bar++ % patterns.length;
+      const pattern = patterns[bar];
+      const stepLength = 0.21;
       const now = cyberBgm.context.currentTime + 0.06;
       pattern.forEach((frequency, index) => {
-        if (frequency) playCyberPulse(now + index * 0.42, frequency);
+        const time = now + index * stepLength;
+        if (frequency) playCyberPulse(time, frequency);
+        if (index % 4 === 0) playCyberKick(time, index === 0 ? 1 : 0.82);
+        if (index === 4 || index === 12) playCyberSnare(time);
+        if (index % 4 === 2) playCyberHat(time);
+        if (bar === 2 && index === 14) playCyberKick(time, 0.52);
+        if (bar === 3 && [3, 7, 11, 15].includes(index)) playCyberHat(time, 0.72);
       });
-      cyberBgm.timer = setTimeout(scheduleCyberBgm, pattern.length * 420);
+      cyberBgm.timer = setTimeout(scheduleCyberBgm, pattern.length * stepLength * 1000);
     }
 
     function startCyberBgm() {
