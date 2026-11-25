@@ -6012,7 +6012,7 @@
       filter.Q.value = 1.4;
       filter.connect(master);
 
-      [["sawtooth", 55, 0.028], ["sine", 110, 0.017], ["sine", 27.5, 0.022]].forEach(([type, frequency, volume]) => {
+      [["sawtooth", 55, 0.048], ["sine", 110, 0.032], ["sine", 27.5, 0.018]].forEach(([type, frequency, volume]) => {
         const oscillator = context.createOscillator();
         const gain = context.createGain();
         oscillator.type = type;
@@ -6040,17 +6040,17 @@
       const oscillator = context.createOscillator();
       const filter = context.createBiquadFilter();
       const gain = context.createGain();
-      oscillator.type = "square";
-      oscillator.frequency.setValueAtTime(frequency, time);
-      filter.type = "bandpass";
-      filter.frequency.value = frequency * 5;
-      filter.Q.value = 4;
+      oscillator.type = "sawtooth";
+      oscillator.frequency.setValueAtTime(frequency * 4, time);
+      filter.type = "lowpass";
+      filter.frequency.value = frequency * 7;
+      filter.Q.value = 1.2;
       gain.gain.setValueAtTime(0.0001, time);
-      gain.gain.exponentialRampToValueAtTime(0.026, time + 0.012);
-      gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.26);
+      gain.gain.exponentialRampToValueAtTime(0.18, time + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.3);
       oscillator.connect(filter).connect(gain).connect(cyberBgm.master);
       oscillator.start(time);
-      oscillator.stop(time + 0.29);
+      oscillator.stop(time + 0.33);
     }
 
     function scheduleCyberBgm() {
@@ -6074,7 +6074,7 @@
         const now = context.currentTime;
         cyberBgm.master.gain.cancelScheduledValues(now);
         cyberBgm.master.gain.setValueAtTime(Math.max(cyberBgm.master.gain.value, 0.0001), now);
-        cyberBgm.master.gain.exponentialRampToValueAtTime(0.07, now + 0.24);
+        cyberBgm.master.gain.exponentialRampToValueAtTime(0.16, now + 0.24);
         if (!cyberBgm.timer) scheduleCyberBgm();
       }).catch(() => {});
     }
