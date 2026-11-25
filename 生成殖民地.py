@@ -15,11 +15,13 @@ PALETTE_SCENES = {
     "hall_quarters": ("霍尔住舱", "自动浴室、折叠椅和窄床塞在一间灰白舱室里，每件东西都在伸手可及的地方。"),
     "command_room": ("基地指挥室", "地图屏幕和通讯台围住中央长桌，通风声稳定得像一条直线。"),
     "base_entrance": ("基地入口", "两道密封门之间铺着消毒垫，门框把室内与绿色荒野切成两个整齐的矩形。"),
+    "glove_room": ("多兹住舱", "两双手套并排留在床面，掌纹、油污和折痕精确重合。"),
     "field_site": ("野外采集区", "低矮丘陵覆盖着鲜绿植被，车辆停在没有泥痕的硬地上。"),
     "forest_lake": ("湖边森林", "水面静得能照出叶脉，林下没有枯叶，也没有风。"),
     "lab_gas": ("毒气实验室", "密封门闭合后，只剩呼吸头盔的送气声和器材表面均匀的高光。"),
     "comms_room": ("通讯室", "主屏中央悬着巡航舰船长的影像，屏幕下方的基地时钟逐秒前进。"),
     "landing_field": ("降落场", "阳光落在灰色飞船和裸露地面上，着陆场没有被阴影遮住的角落。"),
+    "evacuation_corridor": ("无物撤离", "住舱门全部敞开，衣物留在床上，人群赤脚沿空走廊集合。"),
     "fake_airlock": ("救援舰船闸", "舱门内部没有引导灯，也没有接应人员，脚步声进去后没有回声。"),
     "true_cruiser": ("真巡航舰控制室", "大型控制台围成半圆，戴维斯的金色发辫垂在制服肩章旁。"),
     "isolation_deck": ("巡航舰隔离层", "透明隔板把每个人分开，所有随身物品栏都空着。"),
@@ -33,11 +35,13 @@ SCENE_IMAGES = {
     "hall_quarters": "概念图/03-住舱毛巾.jpg",
     "command_room": "概念图/11-通讯室.jpg",
     "base_entrance": "概念图/04-地毯救援.jpg",
+    "glove_room": "概念图/05-两双手套.jpg",
     "field_site": "概念图/06-两辆采集车.jpg",
     "forest_lake": "概念图/07-湖岸弃装.jpg",
     "lab_gas": "概念图/08-半间实验室.jpg",
     "comms_room": "概念图/11-通讯室.jpg",
     "landing_field": "概念图/12-静默救援舰.jpg",
+    "evacuation_corridor": "概念图/10-无物撤离.jpg",
     "fake_airlock": "概念图/12-静默救援舰.jpg",
     "true_cruiser": "概念图/13-十五点着陆.jpg",
     "isolation_deck": "概念图/09-显形态.jpg",
@@ -180,8 +184,8 @@ chapters = [
         ("ch2_quarters_17", "command_room", ["第一份失联报告出现在右侧屏幕：多兹的住舱没有回应。"], "调出住舱记录", "录音尾声里有布料贴合皮肤的轻响。"),
     ]),
     ("第三章：成双之物", 33, 49, [
-        ("ch3_command_01", "command_room", ["多兹的住舱门打开时，两双手套并排放在床上。", "一双有他的体温，另一双也有。"], "查看最后一段录像", "画面里，手套先套住手指，随后替他握紧枪柄。"),
-        ("ch3_command_02", "command_room", ["录像停在枪声之前。桌面上的两双手套没有移动。"], None, None, [
+        ("ch3_command_01", "glove_room", ["多兹的住舱门打开时，两双手套并排放在床上。", "一双有他的体温，另一双也有。"], "查看最后一段录像", "画面里，手套先套住手指，随后替他握紧枪柄。"),
+        ("ch3_command_02", "glove_room", ["录像停在枪声之前。桌面上的两双手套没有移动。"], None, None, [
             ("比较两双手套的磨损", "掌心折痕完全相同，连一道旧油污的位置都一致。", {"delta": 9, "flags": "studied_pairs", "achievement": "paired_objects"}),
             ("亲自戴上一只验证", "你把手伸向靠近床沿的那只。它的开口微微张大。", {"delta": -12, "target": "rash2_01"}),
         ]),
@@ -239,12 +243,12 @@ chapters = [
             ("把时间写进撤离口令", "每个小队都必须复述十五点整。", {"delta": 7, "flags": "heard_davis_eta"}),
             ("只传达立即集合", "你省去时间，避免队员把注意力放在等待上。", {"delta": -5}),
         ]),
-        ("ch5_evac_02", "hall_quarters", ["住舱门全部打开。队员把衣物堆在门内，赤脚站进走廊。", "没有人愿意靠近任何一堆东西。"], "检查集合人数", "姓名逐一得到回应，声音替代了身份卡。"),
-        ("ch5_evac_03", "hall_quarters", ["弗兰德利把一枚旧徽章放在床上。", ("弗兰德利", "它跟了我十二年。现在这算不算证据？")], None, None, [
+        ("ch5_evac_02", "evacuation_corridor", ["住舱门全部打开。队员把衣物堆在门内，赤脚站进走廊。", "没有人愿意靠近任何一堆东西。"], "检查集合人数", "姓名逐一得到回应，声音替代了身份卡。"),
+        ("ch5_evac_03", "evacuation_corridor", ["弗兰德利把一枚旧徽章放在床上。", ("弗兰德利", "它跟了我十二年。现在这算不算证据？")], None, None, [
             ("“放下。十二年也不能证明今天。”", "他把手收回来，徽章留在白色床单中央。", {"delta": 8}),
             ("“记住它的划痕，别碰。”", "他描述那道划痕，像在给遗物做口供。", {"delta": 3}),
         ]),
-        ("ch5_evac_04", "hall_quarters", ["莫里森最后一个走出指挥室。她没有带教鞭，也没有军衔标志。", "命令只剩她的声音。"], "向降落场移动", "人群穿过基地时，自动门一扇扇为裸体的军官打开。"),
+        ("ch5_evac_04", "evacuation_corridor", ["莫里森最后一个走出指挥室。她没有带教鞭，也没有军衔标志。", "命令只剩她的声音。"], "向降落场移动", "人群穿过基地时，自动门一扇扇为裸体的军官打开。"),
         ("ch5_evac_05", "base_entrance", ["入口的消毒垫已经被移走，门槛留下两个颜色相同的矩形。", "没人跨得很快。"], "一步跨过门槛", "脚底碰到温暖硬地；什么也没有合拢。"),
         ("ch5_evac_06", "landing_field", ["阳光比基地内更白。远处，一艘灰色巡航舰已经停在降落场。", "没有人记得听见推进器。"], "停下看一眼", "飞船轮廓符合运输巡航舰的标准图纸。"),
         ("ch5_evac_07", "landing_field", ["弗兰德利先笑了一声。", ("弗兰德利", "戴维斯动作真快。")], "看基地时钟", "外墙时钟显示14:50，秒针刚越过十二点。"),
@@ -290,50 +294,116 @@ def build_main():
     flat = []
     for chapter, p0, p1, beats in chapters:
         for i, b in enumerate(beats):
-            flat.append((chapter if i == 0 else None, p0, p1, i, len(beats), b))
-    for idx, (chapter, p0, p1, i, total, b) in enumerate(flat):
-        node_id, scene_id, texts, action, callback, decisions = (*b, None) if len(b) == 5 else b
-        progress = round(p0 + (p1 - p0) * i / max(total - 1, 1))
-        next_main = flat[idx + 1][5][0] if idx + 1 < len(flat) else "ch6_final_decision"
-        if decisions:
+            node_id, scene_id, texts, action, callback, decisions = (*b, None) if len(b) == 5 else b
+            flat.append({
+                "chapter": chapter if i == 0 else None,
+                "node_id": node_id,
+                "scene_id": scene_id,
+                "texts": texts,
+                "action": action,
+                "callback": callback,
+                "decisions": decisions,
+                "progress": round(p0 + (p1 - p0) * i / max(len(beats) - 1, 1)),
+            })
+
+    groups = []
+    index = 0
+    while index < len(flat):
+        group = [flat[index]]
+        if not flat[index]["decisions"] and index + 1 < len(flat):
+            following = flat[index + 1]
+            if following["chapter"] is None and following["scene_id"] == flat[index]["scene_id"]:
+                group.append(following)
+        groups.append(group)
+        index += len(group)
+
+    entry_for = {
+        beat["node_id"]: group[0]["node_id"]
+        for group in groups
+        for beat in group
+    }
+
+    def resolve_target(target: str) -> str:
+        return entry_for.get(target, target)
+
+    def sentence(action: str, callback: str) -> str:
+        action = action.strip()
+        if action and action[-1] not in "。！？…":
+            action += "。"
+        return f"{action}{callback}"
+
+    for group_index, group in enumerate(groups):
+        node_id = group[0]["node_id"]
+        scene_id = group[0]["scene_id"]
+        chapter = group[0]["chapter"]
+        progress = group[-1]["progress"]
+        next_main = groups[group_index + 1][0]["node_id"] if group_index + 1 < len(groups) else "ch6_final_decision"
+        texts = []
+        for beat in group:
+            texts.extend(beat["texts"])
+            if not beat["decisions"]:
+                texts.append(sentence(beat["action"], beat["callback"]))
+
+        decision = group[-1] if group[-1]["decisions"] else None
+        if decision:
+            if len(texts) == 1:
+                texts.append(PALETTE_SCENES[scene_id][1])
             choices = []
-            for key, (label, cb_text, spec) in enumerate(decisions, 1):
-                cb_id = f"{node_id}_cb_{key}"
-                target = spec.get("target", next_main)
+            for key, (label, cb_text, spec) in enumerate(decision["decisions"], 1):
+                cb_id = f"{decision['node_id']}_cb_{key}"
+                target = resolve_target(spec.get("target", next_main))
                 choices.append(c(label, cb_id, delta=spec.get("delta"), flags=spec.get("flags"),
                                  important=spec.get("important"), set_values=spec.get("set_values"),
                                  achievement=spec.get("achievement"), effect=spec.get("effect")))
-                add_node(cb_id, scene_id=scene_id, progress=progress, texts=[cb_text],
-                         choices=[c("继续", target)])
+                add_node(cb_id, scene_id=scene_id, progress=progress,
+                         texts=[sentence(label, ""), cb_text],
+                         next_id=target)
             add_node(node_id, scene_id=scene_id, progress=progress, texts=texts, choices=choices,
                      chapter=chapter, ambient="static" if scene_id in {"psych_test", "command_room", "comms_room"} else "none")
         else:
-            cb_id = f"{node_id}_cb"
             add_node(node_id, scene_id=scene_id, progress=progress, texts=texts,
-                     choices=[c(action, cb_id)], chapter=chapter,
+                     next_id=next_main, chapter=chapter,
                      ambient="static" if scene_id in {"psych_test", "command_room", "comms_room"} else "none")
-            add_node(cb_id, scene_id=scene_id, progress=progress, texts=[callback], choices=[c("继续", next_main)])
+
+
+def dense_chunks(lines: list[str]) -> list[list[str]]:
+    chunks = []
+    index = 0
+    while index < len(lines):
+        remaining = len(lines) - index
+        size = 2 if remaining == 4 else min(3, remaining)
+        chunks.append(lines[index:index + size])
+        index += size
+    return chunks
 
 
 def add_rash(prefix: str, scene_id: str, lines: list[str], ending_id: str, title: str, closing: str):
-    for i, line in enumerate(lines, 1):
-        nid = f"{prefix}_{i:02d}"
-        target = f"{prefix}_{i+1:02d}" if i < len(lines) else ending_id
-        add_node(nid, scene_id=scene_id, progress=min(99, 12 + i), texts=[line], choices=[c("继续", target)])
+    chunks = dense_chunks(lines)
+    for index, chunk in enumerate(chunks):
+        line_number = sum(len(item) for item in chunks[:index]) + 1
+        nid = f"{prefix}_{line_number:02d}"
+        if index + 1 < len(chunks):
+            next_line_number = line_number + len(chunk)
+            target = f"{prefix}_{next_line_number:02d}"
+        else:
+            target = ending_id
+        add_node(nid, scene_id=scene_id, progress=min(99, 12 + line_number), texts=chunk, next_id=target)
     nodes[ending_id] = {"isEnding": True, "title": title, "type": "RASH ENDING", "progress": 100,
                         "ambient": "static", "achievement": None,
                         "description": lines[-1], "closing": closing, "effect": "silence"}
 
 
 def add_closure(prefix: str, scene_id: str, lines: list[str], ending_id: str):
-    for i, line in enumerate(lines, 1):
-        nid = f"{prefix}_{i:02d}"
-        if i == len(lines):
-            add_node(nid, scene_id=scene_id, progress=99, texts=[line], next_id=ending_id)
-            continue
-        target = f"{prefix}_{i+1:02d}"
-        action = "继续" if i % 3 else "看清接下来发生的事"
-        add_node(nid, scene_id=scene_id, progress=min(98, 88 + i), texts=[line], choices=[c(action, target)])
+    chunks = dense_chunks(lines)
+    for index, chunk in enumerate(chunks):
+        line_number = sum(len(item) for item in chunks[:index]) + 1
+        nid = f"{prefix}_{line_number:02d}"
+        if index + 1 < len(chunks):
+            next_line_number = line_number + len(chunk)
+            target = f"{prefix}_{next_line_number:02d}"
+        else:
+            target = ending_id
+        add_node(nid, scene_id=scene_id, progress=min(99, 88 + line_number), texts=chunk, next_id=target)
 
 
 build_main()
@@ -348,7 +418,7 @@ add_node("ch6_final_decision", scene_id="landing_field", progress=89,
              c("用备用砷化氢验证并烧毁这艘船", "end_burn_01", condition="hasFlag 'kept_arsine_reserve'",
                delta=6, important={"flag": "committed_burn", "label": "点燃救援舰"}, set_values={"evacuation_order": "burn"}),
              c("“再等到十五点，并要求戴维斯回报呼号。”", "ch6_wait_route",
-               condition="hasFlag 'noticed_clock'", delta=10,
+               delta=10,
                important={"flag": "committed_wait", "label": "延迟十分钟"},
                flags="held_morrison_back", set_values={"evacuation_order": "wait"}),
              c("“按撤离命令登船。”", "end_original_01", condition="default", delta=-10,
@@ -565,7 +635,7 @@ def validate(data: dict):
     endings = [n for n in ns.values() if n.get("isEnding")]
     if len(endings) != 8:
         raise AssertionError(f"expected 8 endings, got {len(endings)}")
-    if not 270 <= len(ns) <= 320:
+    if not 120 <= len(ns) <= 160:
         raise AssertionError(f"node count outside target: {len(ns)}")
     return len(ns), len(endings)
 
