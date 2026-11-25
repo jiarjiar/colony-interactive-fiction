@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">静默救援舰</title><desc id="desc">它提前十分钟出现，草地没有听见</desc>
+
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4F839D"/><stop offset=".58" stop-color="#A8CBD0"/><stop offset="1" stop-color="#DCE7E2"/></linearGradient>
+  <linearGradient id="ground" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#173B30"/><stop offset=".5" stop-color="#3F7550"/><stop offset="1" stop-color="#76A968"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E6F2EF"/><stop offset=".28" stop-color="#718589"/><stop offset=".52" stop-color="#D8E6E3"/><stop offset=".55" stop-color="#52676C"/><stop offset="1" stop-color="#17272B"/></linearGradient>
+  <linearGradient id="visor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#B9F1F1"/><stop offset=".35" stop-color="#477C8A"/><stop offset="1" stop-color="#081318"/></linearGradient>
+  <linearGradient id="gel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F5FFF9" stop-opacity=".94"/><stop offset=".48" stop-color="#DDEFE7" stop-opacity=".72"/><stop offset="1" stop-color="#79B86E" stop-opacity=".4"/></linearGradient>
+  <linearGradient id="cinema" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#051419" stop-opacity=".28"/><stop offset=".45" stop-color="#0A1C20" stop-opacity="0"/><stop offset="1" stop-color="#020608" stop-opacity=".42"/></linearGradient>
+  <radialGradient id="sun"><stop stop-color="#FFF5C7"/><stop offset=".18" stop-color="#DAF4EE" stop-opacity=".86"/><stop offset="1" stop-color="#C8DFDA" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#020608" flood-opacity=".5"/></filter>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".62" numOctaves="3" seed="11" result="n"/><feColorMatrix in="n" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .045 0"/><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#BFEFF0" stroke-opacity=".13"/></pattern>
+  <pattern id="scan" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 5.5H6" stroke="#BFEFF0" stroke-opacity=".045"/></pattern>
+  <clipPath id="screen"><rect x="34" y="34" width="1532" height="650" rx="18"/></clipPath>
+</defs>
+<rect width="1600" height="900" fill="#020608"/>
+<rect x="34" y="34" width="1532" height="832" rx="18" fill="#081317"/>
+<g clip-path="url(#screen)" filter="url(#grain)">
+<rect x="34" y="34" width="1532" height="650" fill="url(#sky)"/><path d="M34 500q420-80 800 0t732-30v214H34Z" fill="url(#ground)"/>
+<ellipse cx="910" cy="490" rx="390" ry="48" fill="#365F3F" opacity=".45"/>
+<path d="M540 450q55-235 360-260t430 170l80 120H520Z" fill="url(#metal)" stroke="#525A58" stroke-width="8"/>
+<path d="M640 448h370l-45 190H700Z" fill="#18201E"/>
+<path d="M660 260q300-65 560 60" fill="none" stroke="#F4F6F1" stroke-width="8" opacity=".85"/>
+<g stroke="#D78458" stroke-width="4" fill="none"><path d="M500 560h850" stroke-dasharray="16 16"/><circle cx="1450" cy="180" r="62"/></g><text x="1450" y="188" text-anchor="middle" font-family="monospace" font-size="24" fill="#D78458">14:50</text>
+<text x="160" y="210" fill="#525A58" font-family="monospace" font-size="21">LANDING SOUND</text><path d="M160 245h235" stroke="#525A58" stroke-width="5"/><path d="M170 275h210" stroke="#9AA19C" stroke-width="3" stroke-dasharray="2 15"/>
+<rect x="34" y="34" width="1532" height="650" fill="url(#cinema)"/><rect x="34" y="34" width="1532" height="650" fill="url(#scan)"/></g>
+<path d="M58 104V58h46M1496 58h46v46M58 614v46h46M1496 660h46v-46" fill="none" stroke="#69D5DE" stroke-width="3" opacity=".72"/>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#BFEFF0" opacity=".8"><text x="78" y="632" font-size="15">BLUE PLANET // COLONY SECURITY FEED</text><text x="1518" y="632" text-anchor="end" font-size="15">FRAME 12 // NORMAL LIGHT</text></g>
+<rect x="34" y="684" width="1532" height="182" fill="#071115"/>
+<rect x="34" y="34" width="1532" height="832" rx="18" fill="none" stroke="#D78458" stroke-width="2" opacity=".8"/>
+<g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans SC',sans-serif">
+  <rect x="74" y="70" width="104" height="36" rx="4" fill="#061014" stroke="#D78458" stroke-width="2"/>
+  <text x="126" y="94" text-anchor="middle" fill="#D78458" font-size="17" font-weight="750">12 / 14</text>
+  <text x="76" y="758" fill="#E8F3F1" font-size="46" font-weight="720" letter-spacing="3">静默救援舰</text>
+  <text x="78" y="808" fill="#8EA5A7" font-size="21">它提前十分钟出现，草地没有听见</text>
+  <line x1="76" y1="836" x2="470" y2="836" stroke="#D78458" stroke-width="5"/>
+  <text x="1522" y="836" text-anchor="end" fill="#64797C" font-size="15" letter-spacing="2">COLONY VISUAL DEVELOPMENT</text>
+</g>
+</svg>

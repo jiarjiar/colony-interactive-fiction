@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">显形态</title><desc id="desc">没有血液和器官，只有失去用途的乳白薄膜</desc>
+
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4F839D"/><stop offset=".58" stop-color="#A8CBD0"/><stop offset="1" stop-color="#DCE7E2"/></linearGradient>
+  <linearGradient id="ground" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#173B30"/><stop offset=".5" stop-color="#3F7550"/><stop offset="1" stop-color="#76A968"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E6F2EF"/><stop offset=".28" stop-color="#718589"/><stop offset=".52" stop-color="#D8E6E3"/><stop offset=".55" stop-color="#52676C"/><stop offset="1" stop-color="#17272B"/></linearGradient>
+  <linearGradient id="visor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#B9F1F1"/><stop offset=".35" stop-color="#477C8A"/><stop offset="1" stop-color="#081318"/></linearGradient>
+  <linearGradient id="gel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F5FFF9" stop-opacity=".94"/><stop offset=".48" stop-color="#DDEFE7" stop-opacity=".72"/><stop offset="1" stop-color="#79B86E" stop-opacity=".4"/></linearGradient>
+  <linearGradient id="cinema" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#051419" stop-opacity=".28"/><stop offset=".45" stop-color="#0A1C20" stop-opacity="0"/><stop offset="1" stop-color="#020608" stop-opacity=".42"/></linearGradient>
+  <radialGradient id="sun"><stop stop-color="#FFF5C7"/><stop offset=".18" stop-color="#DAF4EE" stop-opacity=".86"/><stop offset="1" stop-color="#C8DFDA" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#020608" flood-opacity=".5"/></filter>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".62" numOctaves="3" seed="11" result="n"/><feColorMatrix in="n" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .045 0"/><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#BFEFF0" stroke-opacity=".13"/></pattern>
+  <pattern id="scan" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 5.5H6" stroke="#BFEFF0" stroke-opacity=".045"/></pattern>
+  <clipPath id="screen"><rect x="34" y="34" width="1532" height="650" rx="18"/></clipPath>
+</defs>
+<rect width="1600" height="900" fill="#020608"/>
+<rect x="34" y="34" width="1532" height="832" rx="18" fill="#081317"/>
+<g clip-path="url(#screen)" filter="url(#grain)">
+<rect x="34" y="34" width="1532" height="650" fill="#D6DBD5"/>
+<ellipse cx="830" cy="380" rx="490" ry="225" fill="url(#gel)" stroke="#7DAA5A" stroke-width="6"/>
+<path d="M420 430q130-250 300-70t280-55q140-140 260 40" fill="none" stroke="#F4FAF1" stroke-width="34" opacity=".7"/>
+<path d="M390 430q180 170 390 25t465 50" fill="none" stroke="#9FC892" stroke-width="13" opacity=".6"/>
+<g fill="#E4E6E2" opacity=".75"><circle cx="610" cy="370" r="34"/><circle cx="890" cy="310" r="20"/><circle cx="1070" cy="440" r="40"/></g>
+<path d="M360 568H1300" stroke="#525A58" stroke-width="6"/><g stroke="#525A58" stroke-width="3"><path d="M500 560v18M700 560v18M900 560v18M1100 560v18"/></g>
+<text x="360" y="620" fill="#525A58" font-family="monospace" font-size="18">NO ORGAN STRUCTURE / REACTIVE SURFACE / MASS UNCHANGED</text>
+<rect x="34" y="34" width="1532" height="650" fill="url(#cinema)"/><rect x="34" y="34" width="1532" height="650" fill="url(#scan)"/></g>
+<path d="M58 104V58h46M1496 58h46v46M58 614v46h46M1496 660h46v-46" fill="none" stroke="#69D5DE" stroke-width="3" opacity=".72"/>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#BFEFF0" opacity=".8"><text x="78" y="632" font-size="15">BLUE PLANET // COLONY SECURITY FEED</text><text x="1518" y="632" text-anchor="end" font-size="15">FRAME 09 // NORMAL LIGHT</text></g>
+<rect x="34" y="684" width="1532" height="182" fill="#071115"/>
+<rect x="34" y="34" width="1532" height="832" rx="18" fill="none" stroke="#A1C676" stroke-width="2" opacity=".8"/>
+<g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans SC',sans-serif">
+  <rect x="74" y="70" width="104" height="36" rx="4" fill="#061014" stroke="#A1C676" stroke-width="2"/>
+  <text x="126" y="94" text-anchor="middle" fill="#A1C676" font-size="17" font-weight="750">09 / 14</text>
+  <text x="76" y="758" fill="#E8F3F1" font-size="46" font-weight="720" letter-spacing="3">显形态</text>
+  <text x="78" y="808" fill="#8EA5A7" font-size="21">没有血液和器官，只有失去用途的乳白薄膜</text>
+  <line x1="76" y1="836" x2="470" y2="836" stroke="#A1C676" stroke-width="5"/>
+  <text x="1522" y="836" text-anchor="end" fill="#64797C" font-size="15" letter-spacing="2">COLONY VISUAL DEVELOPMENT</text>
+</g>
+</svg>

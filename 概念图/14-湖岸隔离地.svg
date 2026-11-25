@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">湖岸隔离地</title><desc id="desc">距离成为最后一种诚实</desc>
+
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4F839D"/><stop offset=".58" stop-color="#A8CBD0"/><stop offset="1" stop-color="#DCE7E2"/></linearGradient>
+  <linearGradient id="ground" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#173B30"/><stop offset=".5" stop-color="#3F7550"/><stop offset="1" stop-color="#76A968"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E6F2EF"/><stop offset=".28" stop-color="#718589"/><stop offset=".52" stop-color="#D8E6E3"/><stop offset=".55" stop-color="#52676C"/><stop offset="1" stop-color="#17272B"/></linearGradient>
+  <linearGradient id="visor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#B9F1F1"/><stop offset=".35" stop-color="#477C8A"/><stop offset="1" stop-color="#081318"/></linearGradient>
+  <linearGradient id="gel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F5FFF9" stop-opacity=".94"/><stop offset=".48" stop-color="#DDEFE7" stop-opacity=".72"/><stop offset="1" stop-color="#79B86E" stop-opacity=".4"/></linearGradient>
+  <linearGradient id="cinema" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#051419" stop-opacity=".28"/><stop offset=".45" stop-color="#0A1C20" stop-opacity="0"/><stop offset="1" stop-color="#020608" stop-opacity=".42"/></linearGradient>
+  <radialGradient id="sun"><stop stop-color="#FFF5C7"/><stop offset=".18" stop-color="#DAF4EE" stop-opacity=".86"/><stop offset="1" stop-color="#C8DFDA" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#020608" flood-opacity=".5"/></filter>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".62" numOctaves="3" seed="11" result="n"/><feColorMatrix in="n" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .045 0"/><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#BFEFF0" stroke-opacity=".13"/></pattern>
+  <pattern id="scan" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 5.5H6" stroke="#BFEFF0" stroke-opacity=".045"/></pattern>
+  <clipPath id="screen"><rect x="34" y="34" width="1532" height="650" rx="18"/></clipPath>
+</defs>
+<rect width="1600" height="900" fill="#020608"/>
+<rect x="34" y="34" width="1532" height="832" rx="18" fill="#081317"/>
+<g clip-path="url(#screen)" filter="url(#grain)">
+<rect x="34" y="34" width="1532" height="650" fill="url(#sky)"/><circle cx="1260" cy="180" r="120" fill="url(#sun)"/><path d="M34 410q340-130 650 10t882-35v125H34Z" fill="#365F3F"/><path d="M34 485q420-50 790 18t742-20v201H34Z" fill="#8EBBD4" opacity=".72"/>
+<path d="M240 525q260-150 520 0" fill="none" stroke="#E8E0CF" stroke-width="9" stroke-dasharray="18 14"/>
+<g transform="translate(400 385)"><path d="M0 120 90 0l90 120Z" fill="#CDBB91" stroke="#525A58" stroke-width="5"/><path d="M40 120 90 45l50 75" fill="#18201E"/></g>
+<g transform="translate(690 420)"><circle cx="0" cy="0" r="60" fill="#D78458" opacity=".45"/><path d="M-50 0h100M0-50v100" stroke="#E8E0CF" stroke-width="8"/></g>
+<g transform="translate(810 430) scale(0.58)" filter="url(#shadow)">
+      <rect x="-58" y="54" width="20" height="92" rx="6" fill="#31464B" stroke="#8EA5A7" stroke-width="3"/>
+      <path d="M-45 55Q-38 34-18 34H18Q38 34 45 55L42 151Q20 164 0 164T-42 151Z" fill="#18201E" stroke="#8EA5A7" stroke-width="5"/>
+      <path d="M-48 58L-65 72-48 94M48 58L65 72 48 94" fill="#52686C" stroke="#9CB1B2" stroke-width="4"/>
+      <ellipse cy="0" rx="32" ry="39" fill="#D4E1DF" stroke="#18201E" stroke-width="8"/>
+      <path d="M-22-9Q0-29 23-8V19Q0 32-24 18Z" fill="url(#visor)" stroke="#9FDDE0" stroke-width="3"/>
+      <path d="M-28 36Q0 47 28 36" fill="none" stroke="#69D5DE" stroke-width="4"/>
+      <g fill="none" stroke="#18201E" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"><path d="M-38 68Q-65 112-70 150"/><path d="M38 68Q65 112 70 150"/><path d="M-18 150L-31 235"/><path d="M18 150L31 235"/></g>
+      <rect x="-35" y="87" width="70" height="35" rx="6" fill="#0B181C" stroke="#6E8588" stroke-width="3"/>
+      <g fill="#69D5DE"><circle cx="-20" cy="101" r="3.5"/><circle cx="-8" cy="101" r="3.5"/><rect x="5" y="98" width="20" height="6" rx="2"/></g>
+      <path d="M-49 235h35v18h-48Z" fill="#0B1519"/><path d="M14 235h35l13 18H14Z" fill="#0B1519"/>
+    </g><g transform="translate(910 445) scale(0.52)" filter="url(#shadow)">
+      <rect x="-58" y="54" width="20" height="92" rx="6" fill="#31464B" stroke="#8EA5A7" stroke-width="3"/>
+      <path d="M-45 55Q-38 34-18 34H18Q38 34 45 55L42 151Q20 164 0 164T-42 151Z" fill="#365F3F" stroke="#8EA5A7" stroke-width="5"/>
+      <path d="M-48 58L-65 72-48 94M48 58L65 72 48 94" fill="#52686C" stroke="#9CB1B2" stroke-width="4"/>
+      <ellipse cy="0" rx="32" ry="39" fill="#D4E1DF" stroke="#365F3F" stroke-width="8"/>
+      <path d="M-22-9Q0-29 23-8V19Q0 32-24 18Z" fill="url(#visor)" stroke="#9FDDE0" stroke-width="3"/>
+      <path d="M-28 36Q0 47 28 36" fill="none" stroke="#69D5DE" stroke-width="4"/>
+      <g fill="none" stroke="#365F3F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"><path d="M-38 68Q-65 112-70 150"/><path d="M38 68Q65 112 70 150"/><path d="M-18 150L-31 235"/><path d="M18 150L31 235"/></g>
+      <rect x="-35" y="87" width="70" height="35" rx="6" fill="#0B181C" stroke="#6E8588" stroke-width="3"/>
+      <g fill="#69D5DE"><circle cx="-20" cy="101" r="3.5"/><circle cx="-8" cy="101" r="3.5"/><rect x="5" y="98" width="20" height="6" rx="2"/></g>
+      <path d="M-49 235h35v18h-48Z" fill="#0B1519"/><path d="M14 235h35l13 18H14Z" fill="#0B1519"/>
+    </g>
+<g transform="translate(1180 170)" opacity=".65"><path d="M0 110q45-95 160-90t220 80l35 55H-20Z" fill="#9AA19C" stroke="#525A58" stroke-width="5"/><path d="M70 145l-30 80M300 145l35 80" stroke="#525A58" stroke-width="6" stroke-dasharray="12 12"/></g>
+<path d="M1040 325q-80 80-155 165" fill="none" stroke="#D78458" stroke-width="4" stroke-dasharray="10 14"/><path d="M1032 316l20 35-40-7Z" fill="#D78458"/>
+<rect x="34" y="34" width="1532" height="650" fill="url(#cinema)"/><rect x="34" y="34" width="1532" height="650" fill="url(#scan)"/></g>
+<path d="M58 104V58h46M1496 58h46v46M58 614v46h46M1496 660h46v-46" fill="none" stroke="#69D5DE" stroke-width="3" opacity=".72"/>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#BFEFF0" opacity=".8"><text x="78" y="632" font-size="15">BLUE PLANET // COLONY SECURITY FEED</text><text x="1518" y="632" text-anchor="end" font-size="15">FRAME 14 // NORMAL LIGHT</text></g>
+<rect x="34" y="684" width="1532" height="182" fill="#071115"/>
+<rect x="34" y="34" width="1532" height="832" rx="18" fill="none" stroke="#CDBB91" stroke-width="2" opacity=".8"/>
+<g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans SC',sans-serif">
+  <rect x="74" y="70" width="104" height="36" rx="4" fill="#061014" stroke="#CDBB91" stroke-width="2"/>
+  <text x="126" y="94" text-anchor="middle" fill="#CDBB91" font-size="17" font-weight="750">14 / 14</text>
+  <text x="76" y="758" fill="#E8F3F1" font-size="46" font-weight="720" letter-spacing="3">湖岸隔离地</text>
+  <text x="78" y="808" fill="#8EA5A7" font-size="21">距离成为最后一种诚实</text>
+  <line x1="76" y1="836" x2="470" y2="836" stroke="#CDBB91" stroke-width="5"/>
+  <text x="1522" y="836" text-anchor="end" fill="#64797C" font-size="15" letter-spacing="2">COLONY VISUAL DEVELOPMENT</text>
+</g>
+</svg>
